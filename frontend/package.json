@@ -1,0 +1,40 @@
+{
+  "name": "mediflow-frontend",
+  "version": "1.0.0",
+  "description": "MediFlow - Intelligent Patient Management System Frontend (React + Vite + Socket.io)",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^7.9.6",
+    "socket.io-client": "^4.6.1"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.43",
+    "@types/react-dom": "^18.2.17",
+    "@vitejs/plugin-react": "^4.2.1",
+    "vite": "^5.0.8"
+  },
+  "keywords": [
+    "mediflow",
+    "medical",
+    "patient-management",
+    "appointment-booking",
+    "healthcare",
+    "clinic",
+    "telemedicine",
+    "ai-triage",
+    "chatbot",
+    "react",
+    "vite",
+    "socket.io"
+  ],
+  "author": "MediFlow Team",
+  "license": "MIT"
+}

@@ -1,0 +1,171 @@
+/* frontend/src/index.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  /* --- LIGHT THEME VARIABLES --- */
+  color-scheme: light;
+  --primary: #2563eb;       /* Modern Blue */
+  --primary-hover: #1d4ed8;
+  --secondary: #64748b;     /* Slate */
+  --success: #10b981;       /* Emerald */
+  --warning: #f59e0b;       /* Amber */
+  --danger: #ef4444;        /* Red */
+  
+  --bg-body: #f8fafc;       /* Very Light Slate */
+  --bg-surface: #ffffff;    /* White */
+  --bg-input: #ffffff;
+  
+  --text-primary: #0f172a;  /* Dark Slate */
+  --text-secondary: #475569;
+  --text-muted: #94a3b8;
+  --text-on-primary: #ffffff;
+
+  --border: #cbd5e1;        /* Slightly darker border for light mode visibility */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+}
+
+[data-theme='dark'] {
+  /* --- DARK THEME VARIABLES --- */
+  color-scheme: dark;
+  --primary: #3b82f6;
+  --primary-hover: #60a5fa;
+  --secondary: #94a3b8;
+  --success: #34d399;
+  --warning: #fbbf24;
+  --danger: #f87171;
+
+  --bg-body: #0f172a;       /* Deep Navy */
+  --bg-surface: #1e293b;    /* Lighter Navy */
+  --bg-input: #334155;
+
+  --text-primary: #f1f5f9;  /* Off White */
+  --text-secondary: #cbd5e1;
+  --text-muted: #64748b;
+  --text-on-primary: #ffffff;
+
+  --border: #334155;
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.3);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.3);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.3);
+}
+
+/* --- GLOBAL RESETS --- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg-body);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.5;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+/* Force text color inheritance to prevent default user-agent styles */
+h1, h2, h3, h4, h5, h6, p, span, label, td, th, div {
+  color: inherit;
+}
+
+/* --- FORM ELEMENTS GLOBAL FIX --- */
+/* This ensures inputs always have the correct background/text combo */
+button, input, select, textarea {
+  font-family: inherit;
+  outline: none;
+  color: var(--text-primary);
+  background-color: var(--bg-input);
+  border-color: var(--border);
+}
+
+/* Fix for placeholder text visibility */
+::placeholder {
+  color: var(--text-muted) !important;
+  opacity: 1;
+}
+
+/* Autofill fix for Chrome/Edge to prevent white background in dark mode */
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px var(--bg-input) inset !important;
+    -webkit-text-fill-color: var(--text-primary) !important;
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+/* --- UTILITY CLASSES --- */
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--secondary);
+}
+
+/* --- ANIMATIONS --- */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.4s ease-out forwards;
+}
+
+/* Loading Spinner */
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* --- FORM FOCUS STATES --- */
+input:focus, select:focus, textarea:focus {
+  border-color: var(--primary) !important;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2);
+}
+
+/* --- GLASSMORPHISM --- */
+.glass {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+}
+[data-theme='dark'] .glass {
+  background: rgba(30, 41, 59, 0.8);
+}

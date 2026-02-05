@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="MediFlow - Intelligent Patient Management System with AI-powered appointment booking and triage" />
+    <meta name="keywords" content="medical, patient management, appointment booking, healthcare, clinic, telemedicine, ai triage" />
+    <meta name="author" content="MediFlow Team" />
+    <meta name="theme-color" content="#10b981" />
+    <title>MediFlow - Patient Management System</title>
+    
+    <!-- Preconnect to backend (optional, improves performance) -->
+    <link rel="preconnect" href="http://localhost:5000" />
+    
+    <!-- Favicon (optional - you can add later) -->
+    <!-- <link rel="icon" type="image/svg+xml" href="/favicon.svg" /> -->
+    
+    <style>
+      /* Reset and base styles */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+          'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+          sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        background: #f0f9ff;
+      }
+      
+      #root {
+        width: 100%;
+        height: 100vh;
+      }
+      
+      /* Loading spinner */
+      .loading-spinner {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+      }
+      
+      .spinner {
+        border: 4px solid #d1fae5;
+        border-top: 4px solid #10b981;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        animation: spin 1s linear infinite;
+        margin: 0 auto 16px;
+      }
+      
+      @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+      
+      .loading-spinner p {
+        color: #059669;
+        font-size: 16px;
+        font-weight: 500;
+      }
+      
+      .loading-spinner .emoji {
+        font-size: 24px;
+        margin-bottom: 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- React root -->
+    <div id="root">
+      <!-- Loading indicator (shown while React loads) -->
+      <div class="loading-spinner">
+        <div class="emoji">🏥</div>
+        <div class="spinner"></div>
+        <p>Loading MediFlow...</p>
+      </div>
+    </div>
+    
+    <!-- Vite's module script (React app entry) -->
+    <script type="module" src="/src/index.js"></script>
+  </body>
+</html>
